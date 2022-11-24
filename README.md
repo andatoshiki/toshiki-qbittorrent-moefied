@@ -38,7 +38,7 @@ will install and execute qBittorrent hopefully without any problem.
 
 If you are using a desktop Linux distribution without any special demands, you can use AppImage from release page.
 
-Latest AppImage download: [qBittorrent-Enhanced-Edition-x86_64.AppImage](https://github.com/c0re100/qBittorrent-Enhanced-Edition/releases/latest/download/qBittorrent-Enhanced-Edition-x86_64.AppImage)
+Latest AppImage download: [toshiki-qbittorrent-x86_64.AppImage](https://github.com/c0re100/toshiki-qbittorrent/releases/latest/download/toshiki-qbittorrent-x86_64.AppImage)
 
 #### Arch Linux (Maintainer: [c0re100](https://github.com/c0re100))
 
@@ -64,7 +64,7 @@ The one [repository](https://build.opensuse.org/project/show/home:nikoneko:test)
 
 #### openSUSE/RPM-based Linux distro (Maintainer: [PhoenixEmik](https://github.com/PhoenixEmik))
 
-[openSUSE repo](https://build.opensuse.org/package/show/home:PhoenixEmik/qbittorrent-enhanced-edition)
+[openSUSE repo](https://build.opensuse.org/package/show/home:PhoenixEmik/toshiki-qbittorrent)
 
 #### Ubuntu (Maintainer: [poplite](https://github.com/poplite))
 
@@ -80,7 +80,7 @@ brew install c0re100-qbittorrent
 Windows 10 & 11 (Maintainer: [c0re100](https://github.com/c0re100))
 
 ```
-winget install c0re100.qBittorrent-Enhanced-Edition
+winget install c0re100.toshiki-qbittorrent
 ```
 
 Chocolatey (Maintainer: [iYato](https://github.com/iYato))
@@ -110,4 +110,4 @@ Please report any bug (or feature request) to:
 http://bugs.qbittorrent.org
 
 For enhanced features bug(such as Auto Ban, API, Auto Update Tracker lists...), please report to:
-https://github.com/c0re100/qBittorrent-Enhanced-Edition/issues
+https://github.com/c0re100/toshiki-qbittorrent/issues

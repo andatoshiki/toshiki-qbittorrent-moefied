@@ -453,7 +453,7 @@ exclude_libs=(
 )
 
 # fix AppImage output file name
-sed -i 's/Name=qBittorrent.*/Name=qBittorrent-Enhanced-Edition/' /tmp/qbee/AppDir/usr/share/applications/*.desktop
+sed -i 's/Name=qBittorrent.*/Name=toshiki-qbittorrent/' /tmp/qbee/AppDir/usr/share/applications/*.desktop
 
 APPIMAGE_EXTRACT_AND_RUN=1 \
   /tmp/linuxdeployqt-continuous-x86_64.AppImage \
@@ -461,9 +461,9 @@ APPIMAGE_EXTRACT_AND_RUN=1 \
   -always-overwrite \
   -appimage \
   -no-copy-copyright-files \
-  -updateinformation="zsync|https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/qBittorrent-Enhanced-Edition-x86_64.AppImage.zsync" \
+  -updateinformation="zsync|https://github.com/${GITHUB_REPOSITORY}/releases/latest/download/toshiki-qbittorrent-x86_64.AppImage.zsync" \
   -extra-plugins="$(join_by ',' "${extra_plugins[@]}")" \
   -exclude-libs="$(join_by ',' "${exclude_libs[@]}")"
 
-# output file name should be qBittorrent-Enhanced-Edition-x86_64.AppImage
-cp -fv /tmp/qbee/qBittorrent-Enhanced-Edition*.AppImage* "${SELF_DIR}/"
+# output file name should be toshiki-qbittorrent-x86_64.AppImage
+cp -fv /tmp/qbee/toshiki-qbittorrent*.AppImage* "${SELF_DIR}/"

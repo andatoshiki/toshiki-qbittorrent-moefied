@@ -15,7 +15,7 @@ jobs:
         shell: pwsh
       - uses: vedantmgoyal2009/winget-releaser@v1
         with:
-          identifier: c0re100.qBittorrent-Enhanced-Edition
+          identifier: c0re100.toshiki-qbittorrent
           version: ${{ steps.get-version.outputs.version }}
           installers-regex: 'qbittorrent_enhanced_[0-9.]+(_x64)?_setup.exe$'
           token: ${{ secrets.WINGET_TOKEN }}

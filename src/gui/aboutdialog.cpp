@@ -61,7 +61,7 @@ AboutDialog::AboutDialog(QWidget *parent)
         "<tr><td>%3</td><td><a href=\"https://www.qbittorrent.org\">https://www.qbittorrent.org</a></td></tr>"
         "<tr><td>%4</td><td><a href=\"http://forum.qbittorrent.org\">http://forum.qbittorrent.org</a></td></tr>"
         "<tr><td>%5</td><td><a href=\"http://bugs.qbittorrent.org\">http://bugs.qbittorrent.org</a></td></tr>"
-        "<tr><td>%6</td><td><a href=\"https://github.com/c0re100/qBittorrent-Enhanced-Edition\">GitHub Repository</a></td></tr>"
+        "<tr><td>%6</td><td><a href=\"https://github.com/c0re100/toshiki-qbittorrent\">GitHub Repository</a></td></tr>"
         "<tr><td>%7</td><td><a href=\"https://t.me/loli_make_the_world_great_again\">Husky</a></td></tr>"
         "</table>"
         "</p>")

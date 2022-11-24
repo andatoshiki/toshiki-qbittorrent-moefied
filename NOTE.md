@@ -64,7 +64,7 @@ If you're using _qbittorrent-nox_linux_x64_static_build_
 
 If you're using AppImage
 
-`./qBittorrent-Enhanced-Edition.AppImage
+`./toshiki-qbittorrent.AppImage
  --configuration="new_instance_profile_name"`
 
 qBittorrent should create a new configuration and use it for the new instance.
