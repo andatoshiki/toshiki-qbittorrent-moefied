@@ -31,13 +31,13 @@ BEGIN
     BEGIN
         BLOCK "040904B0"
         BEGIN
-            VALUE "CompanyName",      "The qBittorrent Project"
-            VALUE "FileDescription",  "Toshiki's qBittorrent - A Bittorrent Client"
+            VALUE "CompanyName",      "Toshiki Dev"
+            VALUE "FileDescription",  "qbittorrent moefied @安田俊樹 - Moefied cute bitorrent client for universal platforms!"
             VALUE "FileVersion",      VER_FILEVERSION_STR
-            VALUE "InternalName",     "qbittorrent"
-            VALUE "LegalCopyright",   "Copyright ©2006-2022 The qBittorrent Project"
+            VALUE "InternalName",     "qbittorrent moefied"
+            VALUE "LegalCopyright",   "Copyright ©2022-present qbittorrent moefied @安田俊樹"
             VALUE "OriginalFilename", "qbittorrent.exe"
-            VALUE "ProductName",      "qBittorrent"
+            VALUE "ProductName",      "qbittorrent moefied @安田俊樹"
             VALUE "ProductVersion",   VER_PRODUCTVERSION_STR
         END
     END
