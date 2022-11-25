@@ -31,7 +31,7 @@ XPStyle on
 !define CSIDL_LOCALAPPDATA '0x1C' ;Local Application Data path
 
 ; Program specific
-!define PROG_VERSION "4.4.5.10"
+!define PROG_VERSION "0.0.1-moe"
 
 !define MUI_FINISHPAGE_RUN
 !define MUI_FINISHPAGE_RUN_FUNCTION PageFinishRun
@@ -39,29 +39,29 @@ XPStyle on
 
 !ifdef APP64BIT
   ; The name of the installer
-  Name "qBittorrent @安田俊樹 ${PROG_VERSION} x64"
+  Name "qbittorrent @安田俊樹 ${PROG_VERSION} x64"
 
   ; The file to write
-  OutFile "qbittorrent_enhanced_${PROG_VERSION}_x64_setup.exe"
+  OutFile "toshiki-qbittorrent-moefied-${PROG_VERSION}-x64-setup.exe"
 !else ifdef APPQT6
   ; The name of the installer
-  Name "qBittorrent @安田俊樹 ${PROG_VERSION} x64"
+  Name "qBittorrent moefied @安田俊樹 ${PROG_VERSION} x64"
 
   ; The file to write
-  OutFile "qbittorrent_enhanced_${PROG_VERSION}_Qt6_setup.exe"
+  OutFile "toshiki-qbittorrent-moefied-${PROG_VERSION}-Qt6-setup.exe"
 !else
   ; The name of the installer
   Name "qBittorrent @安田俊樹 ${PROG_VERSION}"
 
   ; The file to write
-  OutFile "qbittorrent_enhanced_${PROG_VERSION}_setup.exe"
+  OutFile "toshiki-qbittorrent-moefied-${PROG_VERSION}-setup.exe"
 !endif
 
 ;Installer Version Information
-VIAddVersionKey "ProductName" "qBittorrent @安田俊樹"
-VIAddVersionKey "CompanyName" "The qBittorrent @安田俊樹 project"
-VIAddVersionKey "LegalCopyright" "Copyright ©2016-2022 The qBittorrent @安田俊樹 project"
-VIAddVersionKey "FileDescription" "qBittorrent @安田俊樹 - A Enhanced Client based on qBittorrent"
+VIAddVersionKey "ProductName" "qBittorrent moefied @安田俊樹"
+VIAddVersionKey "CompanyName" "Toshiki Dev"
+VIAddVersionKey "LegalCopyright" "Copyright ©2022-present qBittorrent moefied @安田俊樹"
+VIAddVersionKey "FileDescription" "qbittorrent moefied @安田俊樹 - Moefied cute bitorrent client for universal platforms!"
 VIAddVersionKey "FileVersion" "${PROG_VERSION}"
 
 VIProductVersion "${PROG_VERSION}.0"
@@ -71,16 +71,16 @@ VIProductVersion "${PROG_VERSION}.0"
 ; (which in turn launches the 32bit uninstaller first) the value will still point to the 32bit location.
 ; The user has to manually uninstall the old version and THEN run the 64bit installer
 !ifdef APP64BIT
-  InstallDir $PROGRAMFILES64\qBittorrent
+  InstallDir $PROGRAMFILES64\toshiki-qbittorrent-moefied
 !else ifdef APPQT6
-  InstallDir $PROGRAMFILES64\qBittorrent
+  InstallDir $PROGRAMFILES64\toshiki-qbittorrent-moefied
 !else
-  InstallDir $PROGRAMFILES32\qBittorrent
+  InstallDir $PROGRAMFILES32\toshiki-qbittorrent-moefied
 !endif
 
 ; Registry key to check for directory (so if you install again, it will
 ; overwrite the old one automatically)
-InstallDirRegKey HKLM Software\qbittorrent InstallLocation
+InstallDirRegKey HKLM Software\qbittorrent moefied @安田俊樹 InstallLocation
 
 ; Request application privileges for Windows Vista
 RequestExecutionLevel user
@@ -97,7 +97,7 @@ RequestExecutionLevel user
 ;--------------------------------
 ;Remember the unistaller/installer language
 !define MUI_LANGDLL_REGISTRY_ROOT "HKLM"
-!define MUI_LANGDLL_REGISTRY_KEY "Software\qbittorrent"
+!define MUI_LANGDLL_REGISTRY_KEY "Software\qbittorrent moefied @安田俊樹"
 !define MUI_LANGDLL_REGISTRY_VALUENAME "Installer Language"
 
 ;--------------------------------
