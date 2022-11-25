@@ -57,7 +57,7 @@ build_script:
   - jom -j2 -f Makefile.Release
 
 after_build:
-  - cd "%REPO_DIR%\dist\windows"
+  - cd "%REPO_DIR%\src\release"
   - ls
   - cd "%REPO_DIR%"
   - MKDIR upload
