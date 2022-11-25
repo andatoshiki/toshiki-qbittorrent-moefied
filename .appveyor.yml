@@ -10,11 +10,11 @@ branches:
     - coverity_scan
 
 environment:
-  REPO_DIR: &REPO_DIR c:\qbittorrent
-  CACHE_DIR: &CACHE_DIR c:\qbt_cache
+  REPO_DIR: &REPO_DIR c:\toshiki-qbittorrent
+  CACHE_DIR: &CACHE_DIR c:\toshiki-qbt_cache
 
-  QBT_VER_URL: https://builds.shiki.hu/appveyor/version_64
-  QBT_LIB_URL: https://builds.shiki.hu/appveyor/qbt_libraries_64.7z
+  QBT_VER_URL: https://r2.toshiki.dev/archive/qbittorrent/libraries/version_64
+  QBT_LIB_URL: https://r2.toshiki.dev/archive/qbittorrent/libraries/qbt_libraries_64.7z
 
 # project directory
 clone_folder: *REPO_DIR
@@ -90,4 +90,4 @@ test: off
 
 artifacts:
   - path: upload
-    name: qBittorrent-Appveyor_Windows-x64
+    name: toshiki-qbittorrent-appveyor-windows-x64

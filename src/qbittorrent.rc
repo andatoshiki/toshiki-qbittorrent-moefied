@@ -32,7 +32,7 @@ BEGIN
         BLOCK "040904B0"
         BEGIN
             VALUE "CompanyName",      "The qBittorrent Project"
-            VALUE "FileDescription",  "qBittorrent - A Bittorrent Client"
+            VALUE "FileDescription",  "Toshiki's qBittorrent - A Bittorrent Client"
             VALUE "FileVersion",      VER_FILEVERSION_STR
             VALUE "InternalName",     "qbittorrent"
             VALUE "LegalCopyright",   "Copyright ©2006-2022 The qBittorrent Project"
