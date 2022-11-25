@@ -58,7 +58,7 @@ XPStyle on
 !endif
 
 ;Installer Version Information
-VIAddVersionKey "ProductName" "qBittorrent moefied @安田俊樹"
+VIAddVersionKey "ProductName" "qbittorrent moefied @安田俊樹"
 VIAddVersionKey "CompanyName" "Toshiki Dev"
 VIAddVersionKey "LegalCopyright" "Copyright ©2022-present qBittorrent moefied @安田俊樹"
 VIAddVersionKey "FileDescription" "qbittorrent moefied @安田俊樹 - Moefied cute bitorrent client for universal platforms!"
