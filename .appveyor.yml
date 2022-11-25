@@ -57,6 +57,8 @@ build_script:
   - jom -j2 -f Makefile.Release
 
 after_build:
+  - cd "%REPO_DIR%\dist\windows"
+  - ls
   - cd "%REPO_DIR%"
   - MKDIR upload
   - COPY dist\windows\qt.conf upload
