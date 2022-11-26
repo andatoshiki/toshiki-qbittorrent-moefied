@@ -85,6 +85,7 @@ jobs:
             -DVERBOSE_CONFIGURE=ON \
             -D${{ matrix.qbt_gui }}
           cmake --build build
+          cd build && ls -a
 
       - name: Build qBittorrent (Qt6)
         if: ${{ startsWith(matrix.qt_version, 6) }}
@@ -101,6 +102,7 @@ jobs:
             -DVERBOSE_CONFIGURE=ON \
             -D${{ matrix.qbt_gui }}
           cmake --build build
+          cd build && ls -a
 
       - name: Prepare build artifacts
         run: |
