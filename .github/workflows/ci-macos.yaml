@@ -111,7 +111,7 @@ jobs:
           mkdir upload
           mkdir upload/cmake
           cp build/compile_commands.json upload/cmake
-          cp build/qbittorrent.app upload/cmake
+          cp build/qbittorrent.dmg upload/cmake
           mkdir upload/cmake/libtorrent
           cp libtorrent/build/compile_commands.json upload/cmake/libtorrent
 
