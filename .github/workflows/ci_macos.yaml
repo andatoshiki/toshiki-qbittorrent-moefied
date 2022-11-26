@@ -86,6 +86,7 @@ jobs:
             -D${{ matrix.qbt_gui }}
           cmake --build build
           cd build && ls -a
+          hdiutil create -srcfolder qbittorrent.app -nospotlight -layout NONE -fs HFS+ -format ULFO -ov qbittorrent.dmg
 
       - name: Build qBittorrent (Qt6)
         if: ${{ startsWith(matrix.qt_version, 6) }}
@@ -103,12 +104,14 @@ jobs:
             -D${{ matrix.qbt_gui }}
           cmake --build build
           cd build && ls -a
+          hdiutil create -srcfolder qbittorrent.app -nospotlight -layout NONE -fs HFS+ -format ULFO -ov qbittorrent.dmg
 
       - name: Prepare build artifacts
         run: |
           mkdir upload
           mkdir upload/cmake
           cp build/compile_commands.json upload/cmake
+          cp build/qbittorrent.app upload/cmake
           mkdir upload/cmake/libtorrent
           cp libtorrent/build/compile_commands.json upload/cmake/libtorrent
 
