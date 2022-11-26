@@ -115,8 +115,9 @@ const QString CATEGORIES_FILE_NAME {QStringLiteral("categories.json")};
 
 namespace
 {
+    // peer id and user agent for overall software presented towards trackers/peer (?)
     const char PEER_ID[] = "qB";
-    const char USER_AGENT[] = "qBittorrent Enhanced/" QBT_VERSION_2;
+    const char USER_AGENT[] = "Toshiki's qBittorrent Moefied/" QBT_VERSION_2;
 
     void torrentQueuePositionUp(const lt::torrent_handle &handle)
     {
