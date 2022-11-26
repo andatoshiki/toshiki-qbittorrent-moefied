@@ -10,8 +10,8 @@ branches:
     - coverity_scan
 
 environment:
-  REPO_DIR: &REPO_DIR c:\toshiki-qbittorrent
-  CACHE_DIR: &CACHE_DIR c:\toshiki-qbt_cache
+  REPO_DIR: &REPO_DIR c:\toshiki-qbittorrent-moefied
+  CACHE_DIR: &CACHE_DIR c:\toshiki-qbt-moefied-cache
 
   QBT_VER_URL: https://r2.toshiki.dev/archive/qbittorrent/libraries/version_64
   QBT_LIB_URL: https://r2.toshiki.dev/archive/qbittorrent/libraries/qbt_libraries_64.7z
