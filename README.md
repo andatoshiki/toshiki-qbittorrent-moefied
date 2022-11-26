@@ -1,6 +1,6 @@
 # Toshiki's qBittorrent Moefied Ver.
 
-[![Build and Release](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/build_and_release.yml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/build_and_release.yml) [![CI - macOS](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_macos.yaml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_macos.yaml) [![CI - Ubuntu](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_ubuntu.yaml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_ubuntu.yaml)[![CI - WebUI](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_webui.yaml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_webui.yaml) [![CI - Windows](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_windows.yaml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_windows.yaml)
+[![Build and Release](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/build-and-release.yml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/build-and-release.yml) [![CI - macOS](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci-macos.yaml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci-macos.yaml) [![CI - Ubuntu](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci-ubuntu.yaml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci-ubuntu.yaml)[![CI - WebUI](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci-webui.yaml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci-webui.yaml) [![CI - Windows](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci-windows.yaml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci-windows.yaml)
 
 # Features:
 1. Auto Ban Xunlei, QQ, Baidu, Xfplay, DLBT and Offline downloader
@@ -38,7 +38,7 @@ will install and execute qBittorrent hopefully without any problem.
 
 If you are using a desktop Linux distribution without any special demands, you can use AppImage from release page.
 
-Latest AppImage download: [toshiki-qbittorrent-x86_64.AppImage](https://github.com/c0re100/toshiki-qbittorrent/releases/latest/download/toshiki-qbittorrent-x86_64.AppImage)
+Latest AppImage download: [toshiki-qbittorrent-x86-64.AppImage](https://github.com/c0re100/toshiki-qbittorrent/releases/latest/download/toshiki-qbittorrent-x86-64.AppImage)
 
 #### Arch Linux (Maintainer: [c0re100](https://github.com/c0re100))
 
