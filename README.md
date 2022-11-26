@@ -1,7 +1,5 @@
 qBittorrent @安田俊樹
-------------------------------------------
-[Important Note for user and tracker operators](NOTE.md)
-********************************
+[![CI - macOS](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_macos.yaml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_macos.yaml)[![CI - Ubuntu](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_ubuntu.yaml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_ubuntu.yaml)[![CI - WebUI](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_webui.yaml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_webui.yaml)[![CI - Windows](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_windows.yaml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/ci_windows.yaml)[![Build and Release](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/build_and_release.yml/badge.svg)](https://github.com/andatoshiki/toshiki-qbittorrent-moefied/actions/workflows/build_and_release.yml)
 # Features:
 1. Auto Ban Xunlei, QQ, Baidu, Xfplay, DLBT and Offline downloader
 
