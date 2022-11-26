@@ -27,7 +27,7 @@ jobs:
           restore-keys: |
             appimage-build-dependencies-cache-
       - name: Build AppImage
-        run: .github/workflows/build_appimage.sh
+        run: .github/workflows/build-appimage.sh
       - uses: actions/upload-artifact@v3
         with:
           name: toshiki-qbittorrent-x86_64.AppImage
@@ -75,7 +75,7 @@ jobs:
       - name: cross compile nox-static
         env:
           CROSS_HOST: "${{ matrix.cross_host }}"
-        run: .github/workflows/cross_build.sh
+        run: .github/workflows/cross-build.sh
       - uses: actions/upload-artifact@v3
         with:
           name: qbittorrent-enhanced-nox_${{ matrix.cross_host }}_static
