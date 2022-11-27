@@ -86,6 +86,7 @@ jobs:
             -DVERBOSE_CONFIGURE=ON \
             -D${{ matrix.qbt_gui }}
           cmake --build build
+          sudo du -sh build
           cd build && ls -a
           cd build/dist && ls -a && cd ..
           cd build/qbittorrent.app && ls -a && cd ..
@@ -107,6 +108,7 @@ jobs:
             -D${{ matrix.qbt_gui }}
           cmake --build build
           # cd build && ls -a
+          sudo du -sh build
           cd build/qbittorrent.app && ls -a && cd ..
           cd build/dist && ls -a
           hdiutil create -srcfolder qbittorrent.app -nospotlight -layout NONE -fs HFS+ -format ULFO -ov qbittorrent.dmg
