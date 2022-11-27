@@ -11,7 +11,7 @@ jobs:
       matrix:
         libt_version: ["2.0.5", "1.2.15"]
         qbt_gui: 
-          - "GUI=ON"
+          - GUI=ON
         qt_version: ["5.15.2", "6.2.0"]
         exclude:
           - libt_version: "1.2.15"
@@ -114,7 +114,7 @@ jobs:
           mkdir upload
           mkdir upload/cmake
           cp build/compile_commands.json upload/cmake
-          # cp build/qbittorrent.dmg upload/cmake
+          cp build/qbittorrent.dmg upload/cmake
           mkdir upload/cmake/libtorrent
           cp libtorrent/build/compile_commands.json upload/cmake/libtorrent
 
