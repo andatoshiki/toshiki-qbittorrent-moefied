@@ -86,7 +86,7 @@ jobs:
             -D${{ matrix.qbt_gui }}
           cmake --build build
           cd build && ls -a
-          cd build/qbittorrent.app && ls -a
+          cd build/qbittorrent.app && ls -a && cd ..
           hdiutil create -srcfolder qbittorrent.app -nospotlight -layout NONE -fs HFS+ -format ULFO -ov qbittorrent.dmg
 
       - name: Build qBittorrent (Qt6)
