@@ -88,6 +88,7 @@ jobs:
           cmake --build build
           cd build && ls -a
           cd build/qbittorrent-nox.app && ls -a
+          cd build/dist && ls -a
           hdiutil create -srcfolder qbittorrent-nox.app -nospotlight -layout NONE -fs HFS+ -format ULFO -ov qbittorrent-nox.dmg
 
       - name: Build qBittorrent (Qt6)
@@ -107,6 +108,7 @@ jobs:
           cmake --build build
           cd build && ls -a
           cd build/qbittorrent-nox.app && ls -a
+          cd build/dist && ls -a
           hdiutil create -srcfolder qbittorrent-nox.app -nospotlight -layout NONE -fs HFS+ -format ULFO -ov qbittorrent-nox.dmg
 
       - name: Prepare build artifacts
