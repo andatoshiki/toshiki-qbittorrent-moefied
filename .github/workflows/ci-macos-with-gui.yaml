@@ -86,7 +86,7 @@ jobs:
             -DVERBOSE_CONFIGURE=ON \
             -D${{ matrix.qbt_gui }}
           cmake --build build
-          pwd
+          cd build
           hdiutil create -srcfolder qbittorrent.app -nospotlight -layout NONE -fs HFS+ -format ULFO -ov qbittorrent.dmg
 
       - name: Build qBittorrent (Qt6)
@@ -104,8 +104,7 @@ jobs:
             -DVERBOSE_CONFIGURE=ON \
             -D${{ matrix.qbt_gui }}
           cmake --build build
-          # cd build && ls -a
-          pwd
+          cd build
           hdiutil create -srcfolder qbittorrent.app -nospotlight -layout NONE -fs HFS+ -format ULFO -ov qbittorrent.dmg
 
       - name: Prepare build artifacts
