@@ -609,12 +609,12 @@ MFLAGS=
 MAKEFLAGS=
 
 # Identity of this package.
-PACKAGE_NAME='qbittorrent'
-PACKAGE_TARNAME='qbittorrent'
+PACKAGE_NAME='toshiki-qbittorrent-moefied'
+PACKAGE_TARNAME='toshiiki-qbittorrent-moefied'
 PACKAGE_VERSION='v1.0.0.1'
-PACKAGE_STRING='qbittorrent v1.0.0.1'
-PACKAGE_BUGREPORT='bugs.qbittorrent.org'
-PACKAGE_URL='https://www.qbittorrent.org/'
+PACKAGE_STRING='toshiki-qbittorrent-moefied v1.0.0.1'
+PACKAGE_BUGREPORT='https://github.com/andatoshiki/toshiki-qbittorrent-moefied/issues'
+PACKAGE_URL='https://github.com/andatoshiki/toshiki-qbittorrent-moefied'
 
 ac_subst_vars='am__EXEEXT_FALSE
 am__EXEEXT_TRUE
