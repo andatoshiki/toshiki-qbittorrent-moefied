@@ -31,7 +31,7 @@ XPStyle on
 !define CSIDL_LOCALAPPDATA '0x1C' ;Local Application Data path
 
 ; Program specific
-!define PROG_VERSION "1.0.0.1"
+!define PROG_VERSION "4.4.5.10"
 
 !define MUI_FINISHPAGE_RUN
 !define MUI_FINISHPAGE_RUN_FUNCTION PageFinishRun
@@ -71,16 +71,16 @@ VIProductVersion "${PROG_VERSION}.0"
 ; (which in turn launches the 32bit uninstaller first) the value will still point to the 32bit location.
 ; The user has to manually uninstall the old version and THEN run the 64bit installer
 !ifdef APP64BIT
-  InstallDir $PROGRAMFILES64\toshiki-qbittorrent-moefied
+  InstallDir $PROGRAMFILES64\qBittorrent
 !else ifdef APPQT6
-  InstallDir $PROGRAMFILES64\toshiki-qbittorrent-moefied
+  InstallDir $PROGRAMFILES64\qBittorrent
 !else
-  InstallDir $PROGRAMFILES32\toshiki-qbittorrent-moefied
+  InstallDir $PROGRAMFILES32\qBittorrent
 !endif
 
 ; Registry key to check for directory (so if you install again, it will
 ; overwrite the old one automatically)
-InstallDirRegKey HKLM Software\toshiki-qbittorrent-moefied InstallLocation
+InstallDirRegKey HKLM Software\qbittorrent InstallLocation
 
 ; Request application privileges for Windows Vista
 RequestExecutionLevel user
@@ -97,7 +97,7 @@ RequestExecutionLevel user
 ;--------------------------------
 ;Remember the unistaller/installer language
 !define MUI_LANGDLL_REGISTRY_ROOT "HKLM"
-!define MUI_LANGDLL_REGISTRY_KEY "Software\toshiki-qbittorrent-moefied"
+!define MUI_LANGDLL_REGISTRY_KEY "Software\qbittorrent"
 !define MUI_LANGDLL_REGISTRY_VALUENAME "Installer Language"
 
 ;--------------------------------
