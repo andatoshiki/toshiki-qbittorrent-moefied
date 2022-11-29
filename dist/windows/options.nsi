@@ -45,23 +45,23 @@ XPStyle on
   OutFile "toshiki-qbittorrent-moefied-${PROG_VERSION}-x64-setup.exe"
 !else ifdef APPQT6
   ; The name of the installer
-  Name "qBittorrent moefied @安田俊樹 ${PROG_VERSION} x64"
+  Name "Toshiki's qBittorrent Moefied ${PROG_VERSION} x64"
 
   ; The file to write
   OutFile "toshiki-qbittorrent-moefied-${PROG_VERSION}-Qt6-setup.exe"
 !else
   ; The name of the installer
-  Name "qBittorrent @安田俊樹 ${PROG_VERSION}"
+  Name "toshiki-qbittorrent-moefied ${PROG_VERSION}"
 
   ; The file to write
   OutFile "toshiki-qbittorrent-moefied-${PROG_VERSION}-setup.exe"
 !endif
 
 ;Installer Version Information
-VIAddVersionKey "ProductName" "qbittorrent moefied @安田俊樹"
+VIAddVersionKey "ProductName" "Toshiki's qBittorrent Moefied"
 VIAddVersionKey "CompanyName" "Toshiki Dev"
-VIAddVersionKey "LegalCopyright" "Copyright ©2022-present qBittorrent moefied @安田俊樹"
-VIAddVersionKey "FileDescription" "qbittorrent moefied @安田俊樹 - Moefied cute bitorrent client for universal platforms!"
+VIAddVersionKey "LegalCopyright" "Copyright ©2022-present Toshiki's qBittorrent Moefied"
+VIAddVersionKey "FileDescription" "Toshiki's qBittorrent Moefied - Moefied cute bitorrent client for universal platforms!"
 VIAddVersionKey "FileVersion" "${PROG_VERSION}"
 
 VIProductVersion "${PROG_VERSION}.0"
@@ -80,7 +80,7 @@ VIProductVersion "${PROG_VERSION}.0"
 
 ; Registry key to check for directory (so if you install again, it will
 ; overwrite the old one automatically)
-InstallDirRegKey HKLM Software\toshiki-qbittorrent-moefied
+InstallDirRegKey HKLM Software\toshiki-qbittorrent-moefied InstallLocation
 
 ; Request application privileges for Windows Vista
 RequestExecutionLevel user
