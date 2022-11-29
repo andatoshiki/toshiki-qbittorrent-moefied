@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>qBittorrent</string>
+	<string>Toshiki's qBittorrent Moefied</string>
 	<key>CFBundleDocumentTypes</key>
 	<array>
 		<dict>
@@ -47,7 +47,7 @@
 		</dict>
 	</array>
 	<key>CFBundleName</key>
-	<string>qBittorrent</string>
+	<string>Toshiki's qBittorrent Moefied</string>
 	<key>CFBundleIconFile</key>
 	<string>qbittorrent_mac.icns</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -59,7 +59,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.qbittorrent.qBittorrent</string>
+	<string>dev.toshiki.toshiki-qbittorrent-moefied</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>${MACOSX_DEPLOYMENT_TARGET}.0</string>
 	<key>NSPrincipalClass</key>
