@@ -47,7 +47,6 @@ install:
       COPY "c:\version_new" "%CACHE_DIR%\version")
   # Qt stay compressed in cache
   - 7z x "%CACHE_DIR%\qt5_64.7z" -o"c:\qbt" > nul
-  - choco install nsis -pre -y
 
 before_build:
   # setup env
@@ -65,15 +64,11 @@ build_script:
   - lupdate -extensions c,cpp,h,hpp,ui .
   - qmake qbittorrent.pro && cd src && qmake src.pro
   - jom -j2 -f Makefile.Release
-  - cd ..
-  - cd dist\windows
-  - makensis qbittorrent.nsi && ls && cd ....
 
 after_build:
-  - cd "%REPO_DIR%\src\release"
-  - ls
   - cd "%REPO_DIR%"
   - MKDIR upload
+  - COPY src\lang upload
   - COPY dist\windows\qt.conf upload
   - COPY src\release\qbittorrent.exe upload
   - COPY src\release\qbittorrent.pdb upload
