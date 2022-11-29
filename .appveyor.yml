@@ -68,7 +68,8 @@ build_script:
 after_build:
   - cd "%REPO_DIR%"
   - MKDIR upload
-  - COPY src\lang upload
+  - COPY dist\windows\translations upload
+  - COPY dist\windows\license.txt upload
   - COPY dist\windows\qt.conf upload
   - COPY src\release\qbittorrent.exe upload
   - COPY src\release\qbittorrent.pdb upload
