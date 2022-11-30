@@ -32,7 +32,7 @@ clone_depth: 50
 
 install:
   # check if library needs update
-  - choco install nsis -pre -y
+  - choco install nsis --version=3.0 -y
   - appveyor DownloadFile "%QBT_VER_URL%" -FileName "c:\version_new" && SET /P newVersion=<"c:\version_new"
   - appveyor DownloadFile "%NSIS_PLUGIN_1_URL%" -FileName "C:\FindProcDLL_mod_by_hnedka.7z" && 7z x "C:\FindProcDLL_mod_by_hnedka.7z" -o"%NSIS_PLUGIN_DIR%"
   - appveyor DownloadFile "%NSIS_PLUGIN_2_URL%" -FileName "C:\UAC.zip" && 7z x "C:\UAC.zip" -o"%NSIS_PLUGIN_DIR%"

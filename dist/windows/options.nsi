@@ -31,7 +31,7 @@ XPStyle on
 !define CSIDL_LOCALAPPDATA '0x1C' ;Local Application Data path
 
 ; Program specific
-!define PROG_VERSION "4.4.5.10"
+!define PROG_VERSION "1.0.0.1"
 
 !define MUI_FINISHPAGE_RUN
 !define MUI_FINISHPAGE_RUN_FUNCTION PageFinishRun
@@ -80,7 +80,7 @@ VIProductVersion "${PROG_VERSION}.0"
 
 ; Registry key to check for directory (so if you install again, it will
 ; overwrite the old one automatically)
-InstallDirRegKey HKLM "Software\qbittorrent InstallLocation"
+InstallDirRegKey HKLM Software\qbittorrent InstallLocation
 
 ; Request application privileges for Windows Vista
 RequestExecutionLevel user
