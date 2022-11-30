@@ -79,7 +79,7 @@ build_script:
   - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Widgets.dll "%REPO_DIR%\dist\installer"
   - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5WinExtras.dll "%REPO_DIR%\dist\installer"
   - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Xml.dll "%REPO_DIR%\dist\installer"
-  - MKDIR dist\installer\plugins\iconengines
+  - MKDIR "%REPO_DIR%\dist\installer\plugins\iconengines"
   - COPY C:\Qt\5.15.2\msvc2019_64\plugins\iconengines\qsvgicon.dll "%REPO_DIR%\dist\installer\plugins\iconengines"
   - MKDIR "%REPO_DIR%\dist\installer\plugins\imageformats"
   - COPY C:\Qt\5.15.2\msvc2019_64\plugins\imageformats\qico.dll "%REPO_DIR%\dist\installer\plugins\imageformats"
