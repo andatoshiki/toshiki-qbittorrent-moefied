@@ -66,9 +66,9 @@ build_script:
   - jom -j2 -f Makefile.Release
 
 after_build:
-  - cd "%REPO_DIR%"
+  - cd "%REPO_DIR%" && cd dist\windows && ls -a && cd ....
   - MKDIR upload
-  - COPY dist\windows\translations upload
+#   - COPY dist\windows\translations upload
   - COPY dist\windows\license.txt upload
   - COPY dist\windows\qt.conf upload
   - COPY src\release\qbittorrent.exe upload
