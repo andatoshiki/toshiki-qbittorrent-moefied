@@ -65,8 +65,8 @@ build_script:
   - qmake qbittorrent.pro && cd src && qmake src.pro
   - jom -j2 -f Makefile.Release
   # copy all the build artifacts into installer folder for nsis compilation
-  - COPY release\qbittorrent.exe dist\installer
-  - COPY release\qbittorrent.pdb dist\installer
+  - COPY src\release\qbittorrent.exe dist\installer
+  - COPY src\release\qbittorrent.pdb dist\installer
   - COPY "%CACHE_DIR%\base\bin\libcrypto-1_1-x64.dll" dist\installer
   - COPY "%CACHE_DIR%\base\bin\libssl-1_1-x64.dll" dist\installer
   - COPY "%CACHE_DIR%\base\lib\torrent-rasterbar.dll" dist\installer
