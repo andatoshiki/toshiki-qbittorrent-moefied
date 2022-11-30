@@ -65,8 +65,8 @@ build_script:
   - qmake qbittorrent.pro && cd src && qmake src.pro
   - jom -j2 -f Makefile.Release
   # copy all the build artifacts into installer folder for nsis compilation
-  - COPY release\qbittorrent.exe \dist\installer
-  - COPY release\qbittorrent.pdb \dist\installer
+  - COPY release\qbittorrent.exe dist\installer
+  - COPY release\qbittorrent.pdb dist\installer
   - COPY "%CACHE_DIR%\base\bin\libcrypto-1_1-x64.dll" dist\installer
   - COPY "%CACHE_DIR%\base\bin\libssl-1_1-x64.dll" dist\installer
   - COPY "%CACHE_DIR%\base\lib\torrent-rasterbar.dll" dist\installer
@@ -91,7 +91,7 @@ build_script:
   - MKDIR dist\installer\plugins\styles
   - COPY C:\Qt\5.15.2\msvc2019_64\plugins\styles\qwindowsvistastyle.dll dist\installer\plugins\styles
   # build installer
-  - cd \dist\installer && makensis qbittorrent.nsi
+  - cd dist\installer && makensis qbittorrent.nsi
   - ls
   
 
