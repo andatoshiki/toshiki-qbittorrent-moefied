@@ -64,13 +64,43 @@ build_script:
   - lupdate -extensions c,cpp,h,hpp,ui .
   - qmake qbittorrent.pro && cd src && qmake src.pro
   - jom -j2 -f Makefile.Release
+  # copy all the build artifacts into installer folder for nsis compilation
+  - COPY src\release\qbittorrent.exe dist\installer
+  - COPY src\release\qbittorrent.pdb dist\installer
+  - COPY "%CACHE_DIR%\base\bin\libcrypto-1_1-x64.dll" dist\installer
+  - COPY "%CACHE_DIR%\base\bin\libssl-1_1-x64.dll" dist\installer
+  - COPY "%CACHE_DIR%\base\lib\torrent-rasterbar.dll" dist\installer
+  - COPY "%CACHE_DIR%\base\lib\zlib1.dll" dist\installer
+  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Core.dll dist\installer
+  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Gui.dll dist\installer
+  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Network.dll dist\installer
+  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Sql.dll dist\installer
+  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Svg.dll dist\installer
+  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Widgets.dll dist\installer
+  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5WinExtras.dll dist\installer
+  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Xml.dll dist\installer
+  - MKDIR dist\installer\plugins\iconengines
+  - COPY C:\Qt\5.15.2\msvc2019_64\plugins\iconengines\qsvgicon.dll dist\installer\plugins\iconengines
+  - MKDIR dist\installer\plugins\imageformats
+  - COPY C:\Qt\5.15.2\msvc2019_64\plugins\imageformats\qico.dll dist\installer\plugins\imageformats
+  - COPY C:\Qt\5.15.2\msvc2019_64\plugins\imageformats\qsvg.dll dist\installer\plugins\imageformats
+  - MKDIR dist\installer\plugins\platforms
+  - COPY C:\Qt\5.15.2\msvc2019_64\plugins\platforms\qwindows.dll dist\installer\plugins\platforms
+  - MKDIR dist\installer\plugins\sqldrivers
+  - COPY C:\Qt\5.15.2\msvc2019_64\plugins\sqldrivers\qsqlite.dll dist\installer\plugins\sqldrivers
+  - MKDIR dist\installer\plugins\styles
+  - COPY C:\Qt\5.15.2\msvc2019_64\plugins\styles\qwindowsvistastyle.dll dist\installer\plugins\styles
+  # build installer
+  - cd dist\installer && makensis qbittorrent.nsi
+  - ls
+  
 
 after_build:
   - cd "%REPO_DIR%" && cd dist\windows && ls -a && cd ....
   - MKDIR upload
-#   - COPY dist\windows\translations upload
-  - COPY dist\windows\license.txt upload
-  - COPY dist\windows\qt.conf upload
+  # - COPY dist\windows\translations upload
+  # - COPY dist\windows\license.txt upload
+  # - COPY dist\windows\qt.conf upload
   - COPY src\release\qbittorrent.exe upload
   - COPY src\release\qbittorrent.pdb upload
   - COPY "%CACHE_DIR%\base\bin\libcrypto-1_1-x64.dll" upload
