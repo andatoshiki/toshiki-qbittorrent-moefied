@@ -80,7 +80,8 @@ VIProductVersion "${PROG_VERSION}.0"
 
 ; Registry key to check for directory (so if you install again, it will
 ; overwrite the old one automatically)
-InstallDirRegKey HKLM Software\qbittorrent InstallLocation
+; InstallDirRegKey HKLM "Software\qbittorrent" InstallLocation
+InstallDirRegKey HKLM "Software\qbittorrent" ""
 
 ; Request application privileges for Windows Vista
 RequestExecutionLevel user
