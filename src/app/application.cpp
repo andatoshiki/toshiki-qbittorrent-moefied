@@ -136,8 +136,8 @@ Application::Application(int &argc, char **argv)
     qRegisterMetaType<Log::Msg>("Log::Msg");
     qRegisterMetaType<Log::Peer>("Log::Peer");
 
-    setApplicationName("qBittorrent");
-    setOrganizationDomain("qbittorrent.org");
+    setApplicationName("Toshiki's qBittorrent Moefied");
+    setOrganizationDomain("toshiki.dev");
 #if !defined(DISABLE_GUI)
     setDesktopFileName("dev.toshiki.toshiki-qbittorrent-moefied");
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
