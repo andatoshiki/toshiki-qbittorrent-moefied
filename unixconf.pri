@@ -35,11 +35,11 @@ nogui:systemd {
 
 # Menu Icon
 !nogui {
-    desktopEntry.files = $$DIST_PATH/org.qbittorrent.qBittorrent.desktop
+    desktopEntry.files = $$DIST_PATH/dev.toshiki.toshiki-qbittorrent-moefied.desktop
     desktopEntry.path = $$DATADIR/applications
     INSTALLS += desktopEntry
 
-    appdata.files = $$DIST_PATH/org.qbittorrent.qBittorrent.appdata.xml
+    appdata.files = $$DIST_PATH/dev.toshiki.toshiki-qbittorrent-moefied.appdata.xml
     appdata.path = $$DATADIR/metainfo
     INSTALLS += appdata
 

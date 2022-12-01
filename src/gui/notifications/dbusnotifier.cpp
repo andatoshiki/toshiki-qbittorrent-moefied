@@ -58,7 +58,7 @@ void DBusNotifier::showMessage(const QString &title, const QString &message, con
 {
     // Assign "default" action to notification to make it clickable
     const QStringList actions {QLatin1String("default"), {}};
-    const QVariantMap hints {{QLatin1String("desktop-entry"), QLatin1String("org.qbittorrent.qBittorrent")}};
+    const QVariantMap hints {{QLatin1String("desktop-entry"), QLatin1String("dev.toshiki.toshiki-qbittorrent-moefied")}};
     const QDBusPendingReply<uint> reply = m_notificationsInterface->notify(QLatin1String("qBittorrent"), 0
             , QLatin1String("qbittorrent"), title, message, actions, hints, timeout);
     auto *watcher = new QDBusPendingCallWatcher(reply, this);

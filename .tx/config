@@ -11,7 +11,7 @@ minimum_perc = 23
 mode = developer
 
 [qbittorrent.qbittorrentdesktop_master]
-source_file = dist/unix/org.qbittorrent.qBittorrent.desktop
+source_file = dist/unix/dev.toshiki.toshiki-qbittorrent-moefied.desktop
 source_lang = en
 type = DESKTOP
 minimum_perc = 23

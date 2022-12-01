@@ -139,7 +139,7 @@ Application::Application(int &argc, char **argv)
     setApplicationName("qBittorrent");
     setOrganizationDomain("qbittorrent.org");
 #if !defined(DISABLE_GUI)
-    setDesktopFileName("org.qbittorrent.qBittorrent");
+    setDesktopFileName("dev.toshiki.toshiki-qbittorrent-moefied");
 #if (QT_VERSION < QT_VERSION_CHECK(6, 0, 0))
     setAttribute(Qt::AA_UseHighDpiPixmaps, true);  // opt-in to the high DPI pixmap support
 #endif
