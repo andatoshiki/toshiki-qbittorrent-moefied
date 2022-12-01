@@ -150,5 +150,5 @@ jobs:
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: qBittorrent-CI_Windows-x64_libtorrent-${{ matrix.libt_version }}
+          name: toshiki-qbittorrent-moefied-ci-Windows-x64-libtorrent-${{ matrix.libt_version }}
           path: upload
