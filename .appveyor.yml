@@ -91,7 +91,7 @@ build_script:
   - MKDIR "%REPO_DIR%\dist\installer\plugins\styles"
   - COPY C:\Qt\5.15.2\msvc2019_64\plugins\styles\qwindowsvistastyle.dll "%REPO_DIR%\dist\installer\plugins\styles"
   # build installer
-  - cd "%REPO_DIR%\dist\installer" && makensis qbittorrent.nsi
+  - cd "%REPO_DIR%\dist\installer" && makensis.exe /D qbittorrent.nsi
   - ls
   
 
