@@ -39,7 +39,7 @@ XPStyle on
 
 !ifdef APP64BIT
   ; The name of the installer
-  Name "qbittorrent @安田俊樹 ${PROG_VERSION} x64"
+  Name "toshiki-qbittorrent-moefied-${PROG_VERSION} x64"
 
   ; The file to write
   OutFile "toshiki-qbittorrent-moefied-${PROG_VERSION}-x64-setup.exe"
@@ -81,7 +81,7 @@ VIProductVersion "${PROG_VERSION}.0"
 ; Registry key to check for directory (so if you install again, it will
 ; overwrite the old one automatically)
 ; InstallDirRegKey HKLM "Software\qbittorrent" InstallLocation
-InstallDirRegKey "HKLM" "Software\qbittorrent" "InstallLocation"
+InstallDirRegKey HKLM Software\qbittorrent InstallLocation
 
 ; Request application privileges for Windows Vista
 RequestExecutionLevel user

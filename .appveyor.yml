@@ -12,13 +12,13 @@ branches:
 environment:
   REPO_DIR: &REPO_DIR c:\toshiki-qbittorrent-moefied
   CACHE_DIR: &CACHE_DIR c:\toshiki-qbt-moefied-cache
-  NSIS_PLUGIN_DIR: &NSIS_PLUGIN_DIR C:\Program Files (x86)\NSIS\Plugins\x86-unicode
+  # NSIS_PLUGIN_DIR: &NSIS_PLUGIN_DIR C:\Program Files (x86)\NSIS\Plugins\x86-unicode
 
   QBT_VER_URL: https://r2.toshiki.dev/archive/qbittorrent/libraries/version_64
   QBT_LIB_URL: https://r2.toshiki.dev/archive/qbittorrent/libraries/qbt_libraries_64.7z
-  NSIS_PLUGIN_1_URL: https://r2.toshiki.dev/archive/lib/nsis/FindProcDLL_mod_by_hnedka.7z
-  NSIS_PLUGIN_2_URL: https://r2.toshiki.dev/archive/lib/nsis/UAC.zip
-  NSIS_PLUGIN_3_URL: https://r2.toshiki.dev/archive/lib/nsis/nsisFirewall.zip
+  # NSIS_PLUGIN_1_URL: https://r2.toshiki.dev/archive/lib/nsis/FindProcDLL_mod_by_hnedka.7z
+  # NSIS_PLUGIN_2_URL: https://r2.toshiki.dev/archive/lib/nsis/UAC.zip
+  # NSIS_PLUGIN_3_URL: https://r2.toshiki.dev/archive/lib/nsis/nsisFirewall.zip
 
 # project directory
 clone_folder: *REPO_DIR
@@ -32,27 +32,33 @@ clone_depth: 50
 
 install:
   # check if library needs update
-  - choco install nsis --version=3.0 -y
+  # install nsis packager command-line utils via choco
+  # - choco install nsis --version=3.0 -y
+  # download qbt version infos
   - appveyor DownloadFile "%QBT_VER_URL%" -FileName "c:\version_new" && SET /P newVersion=<"c:\version_new"
-  - appveyor DownloadFile "%NSIS_PLUGIN_1_URL%" -FileName "C:\FindProcDLL_mod_by_hnedka.7z" && 7z x "C:\FindProcDLL_mod_by_hnedka.7z" -o"%NSIS_PLUGIN_DIR%"
-  - appveyor DownloadFile "%NSIS_PLUGIN_2_URL%" -FileName "C:\UAC.zip" && 7z x "C:\UAC.zip" -o"%NSIS_PLUGIN_DIR%"
-  - appveyor DownloadFile "%NSIS_PLUGIN_3_URL%" -FileName "C:\nsisFirewall.zip" && 7z x "C:\nsisFirewall.zip" -o"%NSIS_PLUGIN_DIR%"
+    # download nsis plugin dlls and unzip into nsis plugin folders(needs fix for targeting specific dll(s) within zipped files instead of the entire folder)
+  # - appveyor DownloadFile "%NSIS_PLUGIN_1_URL%" -FileName "C:\FindProcDLL_mod_by_hnedka.7z" && 7z x "C:\FindProcDLL_mod_by_hnedka.7z" -o"%NSIS_PLUGIN_DIR%"
+  # - appveyor DownloadFile "%NSIS_PLUGIN_2_URL%" -FileName "C:\UAC.zip" && 7z x "C:\UAC.zip" -o"%NSIS_PLUGIN_DIR%"
+  # - appveyor DownloadFile "%NSIS_PLUGIN_3_URL%" -FileName "C:\nsisFirewall.zip" && 7z x "C:\nsisFirewall.zip" -o"%NSIS_PLUGIN_DIR%"
+
+  # use sources in cache for reducing build time
   - IF EXIST "%CACHE_DIR%\version" (SET /P oldVersion=<"%CACHE_DIR%\version")
   - IF NOT EXIST "%CACHE_DIR%\version" (SET updateCache=1)
   - IF NOT "%oldVersion%" == "%newVersion%" (SET updateCache=1)
-  # update library
+  # update pre-existing library
   - IF "%updateCache%" == "1" (ECHO "--- Will redownload libraries ---" &&
       RMDIR /S /Q "%CACHE_DIR%" & MKDIR "%CACHE_DIR%" &&
       appveyor DownloadFile "%QBT_LIB_URL%" -FileName "c:\qbt_lib.7z" && 7z x "c:\qbt_lib.7z" -o"%CACHE_DIR%" > nul &&
       COPY "c:\version_new" "%CACHE_DIR%\version")
-  # Qt stay compressed in cache
+  # maek qt stay compressed in cache
   - 7z x "%CACHE_DIR%\qt5_64.7z" -o"c:\qbt" > nul
 
 before_build:
   # setup env
   - CALL "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat" x64
   - SET PATH=%PATH%;C:\Qt\5.15.2\msvc2019_64\bin;%CACHE_DIR%\jom
-  - SET PATH=%PATH%;C:\Program Files (x86)\NSIS
+  # set up nsis env
+  # - SET PATH=%PATH%;C:\Program Files (x86)\NSIS
   # setup project
   - COPY /Y "%CACHE_DIR%\conf.pri" "%REPO_DIR%"
   # workarounds
@@ -65,38 +71,39 @@ build_script:
   - qmake qbittorrent.pro && cd src && qmake src.pro
   - jom -j2 -f Makefile.Release
   # copy all the build artifacts into installer folder for nsis compilation
-  - COPY "%REPO_DIR%\src\release\qbittorrent.exe" "%REPO_DIR%\dist\installer"
-  - COPY "%REPO_DIR%\src\release\qbittorrent.pdb" "%REPO_DIR%\dist\installer"
-  - COPY "%CACHE_DIR%\base\bin\libcrypto-1_1-x64.dll" "%REPO_DIR%\dist\installer"
-  - COPY "%CACHE_DIR%\base\bin\libssl-1_1-x64.dll" "%REPO_DIR%\dist\installer"
-  - COPY "%CACHE_DIR%\base\lib\torrent-rasterbar.dll" "%REPO_DIR%\dist\installer"
-  - COPY "%CACHE_DIR%\base\lib\zlib1.dll" "%REPO_DIR%\dist\installer"
-  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Core.dll "%REPO_DIR%\dist\installer"
-  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Gui.dll "%REPO_DIR%\dist\installer"
-  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Network.dll "%REPO_DIR%\dist\installer"
-  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Sql.dll "%REPO_DIR%\dist\installer"
-  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Svg.dll "%REPO_DIR%\dist\installer"
-  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Widgets.dll "%REPO_DIR%\dist\installer"
-  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5WinExtras.dll "%REPO_DIR%\dist\installer"
-  - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Xml.dll "%REPO_DIR%\dist\installer"
-  - MKDIR "%REPO_DIR%\dist\installer\plugins\iconengines"
-  - COPY C:\Qt\5.15.2\msvc2019_64\plugins\iconengines\qsvgicon.dll "%REPO_DIR%\dist\installer\plugins\iconengines"
-  - MKDIR "%REPO_DIR%\dist\installer\plugins\imageformats"
-  - COPY C:\Qt\5.15.2\msvc2019_64\plugins\imageformats\qico.dll "%REPO_DIR%\dist\installer\plugins\imageformats"
-  - COPY C:\Qt\5.15.2\msvc2019_64\plugins\imageformats\qsvg.dll "%REPO_DIR%\dist\installer\plugins\imageformats"
-  - MKDIR "%REPO_DIR%\dist\installer\plugins\platforms"
-  - COPY C:\Qt\5.15.2\msvc2019_64\plugins\platforms\qwindows.dll "%REPO_DIR%\dist\installer\plugins\platforms"
-  - MKDIR "%REPO_DIR%\dist\installer\plugins\sqldrivers"
-  - COPY C:\Qt\5.15.2\msvc2019_64\plugins\sqldrivers\qsqlite.dll "%REPO_DIR%\dist\installer\plugins\sqldrivers"
-  - MKDIR "%REPO_DIR%\dist\installer\plugins\styles"
-  - COPY C:\Qt\5.15.2\msvc2019_64\plugins\styles\qwindowsvistastyle.dll "%REPO_DIR%\dist\installer\plugins\styles"
-  # build installer
-  - cd "%REPO_DIR%\dist\installer" && makensis.exe /DIsSilent qbittorrent.nsi
-  - ls
+  # - COPY "%REPO_DIR%\src\release\qbittorrent.exe" "%REPO_DIR%\dist\installer"
+  # - COPY "%REPO_DIR%\src\release\qbittorrent.pdb" "%REPO_DIR%\dist\installer"
+  # - COPY "%CACHE_DIR%\base\bin\libcrypto-1_1-x64.dll" "%REPO_DIR%\dist\installer"
+  # - COPY "%CACHE_DIR%\base\bin\libssl-1_1-x64.dll" "%REPO_DIR%\dist\installer"
+  # - COPY "%CACHE_DIR%\base\lib\torrent-rasterbar.dll" "%REPO_DIR%\dist\installer"
+  # - COPY "%CACHE_DIR%\base\lib\zlib1.dll" "%REPO_DIR%\dist\installer"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Core.dll "%REPO_DIR%\dist\installer"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Gui.dll "%REPO_DIR%\dist\installer"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Network.dll "%REPO_DIR%\dist\installer"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Sql.dll "%REPO_DIR%\dist\installer"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Svg.dll "%REPO_DIR%\dist\installer"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Widgets.dll "%REPO_DIR%\dist\installer"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5WinExtras.dll "%REPO_DIR%\dist\installer"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\bin\Qt5Xml.dll "%REPO_DIR%\dist\installer"
+  # - MKDIR "%REPO_DIR%\dist\installer\plugins\iconengines"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\plugins\iconengines\qsvgicon.dll "%REPO_DIR%\dist\installer\plugins\iconengines"
+  # - MKDIR "%REPO_DIR%\dist\installer\plugins\imageformats"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\plugins\imageformats\qico.dll "%REPO_DIR%\dist\installer\plugins\imageformats"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\plugins\imageformats\qsvg.dll "%REPO_DIR%\dist\installer\plugins\imageformats"
+  # - MKDIR "%REPO_DIR%\dist\installer\plugins\platforms"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\plugins\platforms\qwindows.dll "%REPO_DIR%\dist\installer\plugins\platforms"
+  # - MKDIR "%REPO_DIR%\dist\installer\plugins\sqldrivers"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\plugins\sqldrivers\qsqlite.dll "%REPO_DIR%\dist\installer\plugins\sqldrivers"
+  # - MKDIR "%REPO_DIR%\dist\installer\plugins\styles"
+  # - COPY C:\Qt\5.15.2\msvc2019_64\plugins\styles\qwindowsvistastyle.dll "%REPO_DIR%\dist\installer\plugins\styles"
+  # # build installer
+  # - cd "%REPO_DIR%\dist\installer" && makensis.exe /DIsSilent qbittorrent.nsi
+  # - ls
   
 
 after_build:
-  - cd "%REPO_DIR%" && cd dist\windows && ls -a && cd ....
+  - cd "%REPO_DIR%"
+  # make upload folder for artifacts
   - MKDIR upload
   # - COPY dist\windows\translations upload
   # - COPY dist\windows\license.txt upload
