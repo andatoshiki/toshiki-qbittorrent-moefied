@@ -116,9 +116,9 @@ jobs:
             -DVCPKG_TARGET_TRIPLET=x64-windows-static-release `
             -DVERBOSE_CONFIGURE=ON `
             --graphviz=build/target_graph.dot
-          cmake --build build --target qbt_update_translations
+          # cmake --build build --target qbt_update_translations
           cmake --build build
-          cmake --build build --target check
+          # cmake --build build --target check
       - name: Prepare build artifacts
         run: |
           mkdir upload
